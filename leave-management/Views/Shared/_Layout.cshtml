@@ -30,7 +30,7 @@
                                 Manage
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Leave Types</a>
+                                <a class="dropdown-item" asp-controller="LeaveTypes" asp-action="Index">Leave Types</a>
                                 <a class="dropdown-item" href="#">Leave Allocations</a>
                                 <a class="dropdown-item" href="#">Leave Applications</a>
                                 <a class="dropdown-item" href="#">Employees</a>
@@ -55,7 +55,25 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        
+            var url = ["https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", "//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"],
+                head = document.getElementsByTagName('head')[0];
+                
+
+            for (let i = 0; i < url.length; i++) {
+                let link = document.createElement('link');
+                link.type = "text/css";
+                link.rel = "stylesheet";
+                link.href = url[i];
+                head.appendChild(link);
+            }
+     
+    </script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
